@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zbk.springboot.mapper.CarMapper">
+ 
+    <resultMap id="BaseResultMap" type="com.zbk.springboot.entity.Car">
+        <result column="id" jdbcType="INTEGER" property="Id" />
+        <result column="CarModel" jdbcType="VARCHAR" property="carModel" />
+        <result column="CarNo" jdbcType="VARCHAR" property="carNo" />
+        <result column="UseType" jdbcType="VARCHAR" property="useType" />
+    </resultMap>
+ 
+    <select id="All" resultType="com.zbk.springboot.entity.Car">
+        select * from b_car
+    </select>
+    
+     <select id="Single" resultType="com.zbk.springboot.entity.Car">
+        select id,CarModel,CarNo,UseType from b_car where id = #{id}
+    </select>
+ 
+</mapper>
